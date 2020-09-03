@@ -14,6 +14,7 @@ RUN pip install --quiet --no-cache-dir awscli
 RUN apk update \
  && apk add jq \
  && apk add curl \
+ && apk add bash \
  && rm -rf /var/cache/apk/*
 
 RUN curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-deploy | tee /usr/bin/ecs-deploy
