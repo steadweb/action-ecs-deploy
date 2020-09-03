@@ -16,8 +16,8 @@ RUN apk update \
  && apk add curl \
  && rm -rf /var/cache/apk/*
 
-RUN curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-deploy | sudo tee /usr/bin/ecs-deploy
-RUN sudo chmod +x /usr/bin/ecs-deploy
+RUN curl https://raw.githubusercontent.com/silinternational/ecs-deploy/master/ecs-deploy | tee /usr/bin/ecs-deploy
+RUN chmod +x /usr/bin/ecs-deploy
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
